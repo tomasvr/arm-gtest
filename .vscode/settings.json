@@ -1,0 +1,16 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "C_Cpp.intelliSenseEngineFallback": "enabled",
+    "files.associations": {
+        "gpio.h": "c",
+        "rcc.h": "c",
+        "led_driver.h": "c",
+        "settings.h": "c",
+        "common.h": "c",
+        "runtime_error.h": "c",
+        "array": "cpp",
+        "circular_buffer.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled",
+    "terminal.integrated.allowChords": false
+}

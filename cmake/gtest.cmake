@@ -1,0 +1,10 @@
+set(CMAKE_CXX_STANDARD 14)
+include(GoogleTest)
+enable_testing()
+
+add_executable(utest ${CXX_SRCS_TEST} ${C_SRCS} ${C_SRCS_MOCK} ${CXX_SRCS} ${ASM_SRCS})
+add_subdirectory(lib/googletest)
+target_include_directories(utest PRIVATE test/mocks)
+target_link_libraries(utest gtest gtest_main)
+target_compile_definitions(utest PRIVATE -DNATIVE_TEST -DUSE_LIBOPENCM3=0)
+gtest_discover_tests(utest)
