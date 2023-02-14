@@ -19,6 +19,16 @@ Or after cloning:
 git submodule update --init
 ```
 
+## Docker Setup (recommended)
+
+from the root directory of this repository run:
+```
+sudo docker build -t tomasvr/arm-gtest .
+sudo docker run --rm -it --device=/dev/ttyACM0 -v "$(pwd):/home/app" tomasvr/arm-gtest
+```
+The --device flags allows us to access the device at `/dev/ttyACM0` where the blackpill is usually located. <br>
+**Note**: if your serial port connection is located at a different device file then you have to change `/dev/ttyACM0` to your serial port location in the above docker command and also in the `cmake/target.cmake` script for flashing.
+
 ## Manual Setup
 
 Dependencies:
@@ -44,16 +54,6 @@ Install the remaining dependencies:
 ```
 sudo apt install -y cmake libnewlib-dev gdb-multiarch
 ```
-
-## Docker Setup (recommended)
-
-from the root directory of this repository run:
-```
-sudo docker build -t tomasvr/arm-gtest .
-sudo docker run --rm -it --device=/dev/ttyACM0 -v "$(pwd):/home/app" tomasvr/arm-gtest
-```
-The --device flags allows us to access the device at `/dev/ttyACM0` where the blackpill is usually located. <br>
-**Note**: if your serial port connection is located at a different device file then you have to change `/dev/ttyACM0` to your serial port location in the above docker command and also in the `cmake/target.cmake` script for flashing.
 
 ## Building
 
