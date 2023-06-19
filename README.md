@@ -1,8 +1,8 @@
 # TDD ARM development (Gtest, libopencm3)
 
 This repository is a sample project for Test Driven Development on ARM microcontrollers using libopencm3 and gtest.
-Also included is a docker image which lets you easily set up the development environment including toolchain.
-The repository includes an example for how to build and flash an STM32 blackpill project. However, the repository can be used for various kinds of ARM processor supported by libopencm3.
+It also includes a dockerfile to quickly set up the development environment and toolchain.
+The project is currently configured for the STM32 blackpill project. However, the same setup can be used for a wide range of ARM processors supported by libopencm3.
 
 # Setup
 
